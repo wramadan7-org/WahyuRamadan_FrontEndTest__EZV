@@ -2,7 +2,7 @@ import TodoList from "@/components/TodoList";
 
 export default function Home() {
   return (
-    <main className="p-8 sm:20 flex flex-col items-start justify-start gap-16">
+    <main className="p-8 sm:p-10 lg:p-20 flex flex-col items-start justify-start gap-16">
       <div className="flex flex-row w-full gap-10 justify-between items-center">
         <h1 className="font-bold text-2xl sm:text-4xl underline italic">
           Todo List

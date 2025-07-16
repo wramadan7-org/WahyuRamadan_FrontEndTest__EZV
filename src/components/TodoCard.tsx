@@ -1,6 +1,6 @@
-import { Todo } from "@/types/todo";
+import { TodoType } from "@/types/todo";
 
-export default function TodoCard(todo: Todo) {
+export default function TodoCard(todo: TodoType) {
   return (
     <div
       id={`${todo?.title}-${todo?.id}`}
