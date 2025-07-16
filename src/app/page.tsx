@@ -1,4 +1,5 @@
 import TodoList from "@/components/TodoList";
+import TodoPopover from "@/components/TodoPopover";
 
 export default function Home() {
   return (
@@ -24,9 +25,9 @@ export default function Home() {
       <div
         popover="auto"
         id="popover-todo"
-        className="top-1/2 left-1/2 transform -translate-x-1/2 w-fit h-fit bg-[#f3f3f3] dark:bg-[#222222] text-[#171717] dark:text-[#ededed] p-8 rounded-md min-w-72 shadow-md shadow-gray-700 border"
+        className="top-1/2 left-1/2 transform -translate-1/2 w-fit h-fit bg-[#f3f3f3] dark:bg-[#222222] text-[#171717] dark:text-[#ededed] p-5 sm:p-8 rounded-md min-w-72 shadow-md shadow-gray-700 border"
       >
-        POPOVERRRRRR
+        <TodoPopover />
       </div>
     </main>
   );
