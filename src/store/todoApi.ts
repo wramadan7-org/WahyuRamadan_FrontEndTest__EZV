@@ -7,8 +7,10 @@ export const todoApi = createApi({
     baseUrl: "https://jsonplaceholder.typicode.com",
   }),
   endpoints: (builder) => ({
-    getTodos: builder.query<Todo[], string>({
-      query: () => "todos",
+    getTodos: builder.query<Todo[], { start: number; limit: number }>({
+      query: ({ start, limit }) => `todos?_start=${start}&_limit=${limit}`,
     }),
   }),
 });
+
+export const { useGetTodosQuery } = todoApi;
