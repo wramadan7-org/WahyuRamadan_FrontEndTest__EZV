@@ -79,6 +79,7 @@ export default function TodoPopover() {
             placeholder="sunt cum tempora"
             defaultValue={""}
             className="border rounded w-full px-3 py-1"
+            required
           />
         </div>
 
