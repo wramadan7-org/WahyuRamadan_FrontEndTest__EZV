@@ -1,7 +1,25 @@
 import TodoList from "@/components/TodoList";
 import TodoPopover from "@/components/TodoPopover";
 
-export default function Home() {
+async function getTodos() {
+  const result = await fetch(
+    "https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10",
+    {
+      next: {
+        revalidate: 60,
+        tags: ["todos"],
+      },
+    }
+  );
+
+  if (!result.ok) throw new Error("Failed to fetch todos");
+
+  return result.json();
+}
+
+export default async function Home() {
+  const initialTodos = await getTodos();
+
   return (
     <main className="p-8 sm:p-10 lg:p-20 flex flex-col items-start justify-start gap-16">
       <div className="flex flex-row w-full gap-10 justify-between items-center">
@@ -20,7 +38,7 @@ export default function Home() {
         </button>
       </div>
 
-      <TodoList />
+      <TodoList initialTodos={initialTodos} />
 
       <div
         popover="auto"

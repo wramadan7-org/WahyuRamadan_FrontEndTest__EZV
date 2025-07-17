@@ -22,6 +22,7 @@ export default function TodoPopover() {
 
     try {
       await createTodo(payload).unwrap();
+      await fetch("/api/todo", { method: "POST" });
       formRef.current?.reset();
       document.getElementById("popover-todo")?.hidePopover();
     } catch (error) {
